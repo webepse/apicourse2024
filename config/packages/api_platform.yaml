@@ -22,5 +22,5 @@ api_platform:
     collection:
         pagination:
             items_per_page_parameter_name: 'count'
-    event_listeners_backward_compatibility_layer: false
+    event_listeners_backward_compatibility_layer: true
     keep_legacy_inflector: false

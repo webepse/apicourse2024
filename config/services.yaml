@@ -26,4 +26,4 @@ services:
         public: true
 
     App\Serializer\PatchedDateTimeNormalizer:
-        tags: [Serializer.normalizer]
+        tags: [serializer.normalizer]
