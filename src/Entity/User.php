@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use ApiPlatform\Metadata\ApiResource;
@@ -19,6 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
         'groups' => ['users_read']
     ]
 )]
+#[ApiFilter(SearchFilter::class, properties:["customers.firstName"=>"partial"])]
 #[UniqueEntity(fields:["email"], message:"Un utilisateur ayant cette adresse E-mail existe déjà")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
